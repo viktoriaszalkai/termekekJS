@@ -60,6 +60,14 @@ function vasarol() {
 vasarol();
 
 // 4. feladat
+const torlesGOMBELEM = document.getElementById("feladat_4");
+torlesGOMBELEM.innerHTML = "<input type='button' value='Törlés'>";
+torlesGOMBELEM.addEventListener("click", torolEsemeny);
 
-
-function torolEsemeny() {}
+function torolEsemeny() {
+  for (let index = 0; index <= vasarolt.length; index++) {
+    vasarolt.pop();
+  }
+  vasarolt.pop();
+  VASAROL.innerHTML = `${vasarolt}`;
+}
