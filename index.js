@@ -54,6 +54,7 @@ function vasarol() {
     if (!vasarolt.includes(event.target.innerHTML)) {
       vasarolt.push(event.target.innerHTML);
       VASAROL.innerHTML = `${vasarolt}`;
+      TORLES.classList.add("hide");
     }
   }
 }
@@ -61,13 +62,15 @@ vasarol();
 
 // 4. feladat
 const torlesGOMBELEM = document.getElementById("feladat_4");
-torlesGOMBELEM.innerHTML = "<input type='button' value='Törlés'>";
+torlesGOMBELEM.innerHTML += "<input type='button' value='Törlés'>";
 torlesGOMBELEM.addEventListener("click", torolEsemeny);
-
+const TORLES = document.getElementById("torles");
+console.log(TORLES)
 function torolEsemeny() {
   for (let index = 0; index <= vasarolt.length; index++) {
     vasarolt.pop();
   }
   vasarolt.pop();
   VASAROL.innerHTML = `${vasarolt}`;
+  TORLES.classList.remove("hide");
 }
